@@ -108,7 +108,7 @@
 			\begin{varwidth}{\textwidth}
 				\raggedright
 				\faPhone*\hspace{0.2cm}\thephone\\[0.5em]
-				\faEnvelope\hspace{0.2cm}\themail\\[0.5em]
+				\href{mailto:\themail}{\faEnvelope\hspace{0.2cm}\themail}\\[0.5em]
 				\href{https://www.linkedin.com/in/\thelinkedin}{\faLinkedin\hspace{0.2cm}linkedin.com/in/\thelinkedin}\\[0.5em]
 				\href{https://github.com/\thegithub}{\faGithub\hspace{0.2cm}github.com/\thegithub}\\[0.5em]
 			\end{varwidth}

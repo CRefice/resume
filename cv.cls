@@ -36,7 +36,7 @@
 \newlength{\sidebarmargin}
 \setlength{\sidebarwidth}{0.27\paperwidth}
 \setlength{\sidebarmargin}{5mm}
-\TPMargin{1.5mm}
+\TPMargin{2mm}
 
 %---------------------------------------
 % Font / style configuration
@@ -46,6 +46,7 @@
 \definecolor{sidebarfg}{rgb}{1.0,1.0,1.0}
 \definecolor{sidebarlowcontrastfg}{rgb}{0.8, 0.8, 0.8}
 \definecolor{skillfilled}{rgb}{0.8, 0.8, 0.8}
+\definecolor{skillfg}{rgb}{0.9, 0.9, 0.9}
 \definecolor{skillempty}{rgb}{0.3, 0.3, 0.5}
 \definecolor{textfg}{rgb}{0.2,0.2,0.2}
 \definecolor{unimportantfg}{rgb}{0.8,0.8,0.8}
@@ -53,6 +54,7 @@
 
 \newcommand{\datestyle}[1]{{\color{accent} #1}}
 \newcommand{\descriptionstyle}[1]{{\color{lowcontrastfg} #1}}
+\newcommand{\skillstyle}[1]{{\color{skillfg} #1}}
 
 % No page number
 \pagestyle{empty}
@@ -60,7 +62,7 @@
 
 
 \titleformat{\section}
-{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\color{unimportantfg}\titlerule[0.8pt]}]
+{\normalfont\raggedright\Large\bfseries}{\thesection}{1em}{}[{\color{unimportantfg}\titlerule[0.8pt]}]
 
 \newcommand*{\name}[2]{\newcommand*{\firstname}{#1}\newcommand*{\lastname}{#2}}
 \newcommand*{\phone}[1]{\newcommand*{\thephone}{#1}}
@@ -77,10 +79,11 @@
 	\begin{tabular}{l}
 }{
 	\end{tabular}
+	\vspace{-0.8em}
 }
 
 \newcommand{\skill}[2]{
-	{\color{sidebarlowcontrastfg}#1}\\[0.1mm]
+	{\skillstyle{#1}}\\[0.1mm]
 	\begin{tikzpicture}[x=1.5em]
 		\foreach \n in {1,...,#2}{
 			\fill[color=skillfilled, xslant=0.5] (\n, 0) rectangle ++(1.2em, 0.74em);
@@ -90,7 +93,7 @@
 				\fill[color=skillempty, shift={(1,0)}, xslant=0.5] (\n, 0) rectangle ++(1.2em, 0.74em);
 			}
 		\fi
-	\end{tikzpicture}\\[1em]
+	\end{tikzpicture}\\[0.8em]
 }
 
 \newcommand{\makesidebar}{%
@@ -99,12 +102,12 @@
 			\color{skillempty}
 			\setlength{\fboxrule}{2pt}
 			\setlength{\fboxsep}{0pt}
-			\fbox{\includegraphics[trim=10cm 2cm 10cm 2cm, clip, width=0.8\sidebarwidth]{portrait.jpg}}%
+			\fbox{\includegraphics[trim=3cm 15cm 0cm 1cm, clip, width=0.8\sidebarwidth]{portrait.jpg}}%
 
 			\color{sidebarfg}
 			{\Huge \firstname{} \textbf{\lastname}}
 
-			\vspace{1.2em}
+			\vspace{1em}
 			\begin{varwidth}{\textwidth}
 				\raggedright
 				\faPhone*\hspace{0.2cm}\thephone\\[0.5em]
@@ -113,7 +116,6 @@
 				\href{https://github.com/\thegithub}{\faGithub\hspace{0.2cm}github.com/\thegithub}\\[0.5em]
 			\end{varwidth}
 
-			\vspace{1em}
 			\input{skills}
 		\end{center}
 	\end{textblock*}

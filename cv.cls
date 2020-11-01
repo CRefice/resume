@@ -102,7 +102,7 @@
 			\color{skillempty}
 			\setlength{\fboxrule}{2pt}
 			\setlength{\fboxsep}{0pt}
-			\fbox{\includegraphics[trim=3cm 15cm 0cm 1cm, clip, width=0.8\sidebarwidth]{portrait.jpg}}%
+			\fbox{\includegraphics[trim=5mm 17mm 0mm 2mm, clip, width=0.8\sidebarwidth]{portrait.jpg}}%
 
 			\color{sidebarfg}
 			{\Huge \firstname{} \textbf{\lastname}}

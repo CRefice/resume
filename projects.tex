@@ -1,49 +1,45 @@
 \section*{Projects}
-\datedentry{Arbitrary local refinement of gradient meshes} % Project
-{Bachelor's Project} % Empty position
-{} % Empty location
-{} % Empty date
-{%
-    Gradient meshes are a vector graphics primitive used to achieve complex, realistic images by smoothly interpolating the color of a mesh of control points, which can be refined to achieve more detail. In this project, I defined and implemented a new local refinement scheme, allowing mesh cells to be split individually at any parameter value.
-}
-
-\datedentry{FLIS -- Filtering Visualizer} % Project
-{Course Related} % Empty position
-{} % Empty location
-{} % Empty date
-{%
-    An interactive visualizer of 3D volumetric data, implementing data filtering based on the Connected Components Max Tree algorithm. It supports various filtering attributes such as volume, surface area, or elongation. Written in C++ with Qt and OpenGL.
-}
-
-\datedentry{\githublink{oxide}{Oxide}} % Project
-{Personal} % Empty position
-{} % Empty location
-{} % Empty date
-{%
-    An interpreted, stack-based programming language written in Rust. The language currently supports most imperative control structures, along as extra functional features such as first-class functions.
-}
-
-\datedentry{\githublink{prayer}{Prayer}} % Project
-{Personal} % Empty position
-{} % Empty location
-{} % Empty date
-{%
-    A multi-threaded stochastic path tracer with advanced features such as KD-Tree based geometry acceleration, Cook-Torrance BRDF, and importance sampling. Written in Rust.
-}
-
-\datedentry{\githublink{isolation}{Isolation}} % Project
-{Course Related} % Empty position
-{} % Empty location
-{} % Empty date
-{%
-    Winning entry for the OpenGL competition organized by the Computer Graphics course at the University of Groningen. It consists of a 3D scene rendered with OpenGL using some advanced rendering techniques, such as HDR rendering, Shadow mapping, and vertex displacement.
-}
-%\datedentry
-%{Personal} % Empty position
-%{\href{https://github.com/CRefice/ssm}{SSM - Speedy Simd Library\hspace{0.15cm}\faGithubSquare}} % Project
-%{} % Empty location
-%{} % Empty date
-%{
-%    A C++ Linear Algebra library making use of SIMD intrinsics for high-performance computations. It includes types and functions for vectors, matrices and quaternions.
-%    Importantly, it's fully template-based, supporting vectors of any type and dimension.
-%}
+\begin{cventries}
+  \cventry{Bachelor's Project}
+  {Arbitrary local refinement of gradient meshes}
+  {March 2020 --- July 2020}
+  {}
+  {%
+    \begin{cvitems}
+      \item Research component: devised a new way to split individual cells in gradient meshes, a popular vector graphics primitive.
+      \item Development component: built an interactive gradient mesh editor using \cvlanguage{C++} and \cvlanguage{OpenGL}, allowing users to move and split cells using the above mentioned refinement scheme.
+      \item Soon to be published in an academic journal.
+    \end{cvitems}
+  }
+  \cventry{Course-related Project}
+  {\githublink{isolation}{Isolation}}
+  {March 2020}
+  {}
+  {%
+    \begin{cvitems}
+      \item Voted best/most interesting real-time rendered scene among 25 entrants for the OpenGL competition organized by the Computer Graphics course at the University of Groningen.
+      \item Used \cvlanguage{C++} to implement a small 3D scene rendered with \cvlanguage{OpenGL} using HDR rendering, shadow mapping, and vertex displacement.
+    \end{cvitems}
+  }
+  \cventry{Personal Project}
+  {\githublink{prayer}{Prayer}}
+  {}
+  {}
+  {%
+    \begin{cvitems}
+    \item Used \cvlanguage{Rust} to implement a physically-based path tracer to produce photorealistic images from a scene description.
+      \item Optimized the implementation to take advantage of parallelism as well as acceleration data structures such as KD-Trees.
+    \end{cvitems}
+  }
+  \cventry{Personal Project}
+  {\githublink{damage}{Damage}}
+  {}
+  {}
+  {%
+    \begin{cvitems}
+    \item Developed a GameBoy emulator for Windows using \cvlanguage{C++}, featuring accurate audio/video emulation and remappable controls.
+    \item Created a reusable \cvlanguage{WinAPI} abstraction library to implement the program's user interface.
+    \item Reverse-engineered CPU and audio functionality from original developer documentation.
+    \end{cvitems}
+  }
+\end{cventries}

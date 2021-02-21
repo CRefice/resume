@@ -17,3 +17,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release: latest
           files: ./resume.pdf
+          prerelease: false

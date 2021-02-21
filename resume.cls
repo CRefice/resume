@@ -1,7 +1,7 @@
 % vim: set ft=tex:
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cv}[20/9/2020 Custom CV class]
+\ProvidesClass{resume}[20/9/2020 Custom resume class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax

@@ -7,19 +7,18 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: dante-ev/latex-action@master
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: resume.tex
-          extra_system_packages: "fonts-font-awesome fonts-roboto"
-          args: "-xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode"
+          latexmk_use_xelatex: true
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ compiled }}
+          release_name: Compiled PDF File
           draft: false
           prerelease: false
       - name: Upload Release Asset

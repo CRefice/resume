@@ -13,6 +13,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{etoolbox}
 \RequirePackage{fontawesome5}
+\RequirePackage[sfdefault, light]{roboto}
 \RequirePackage{varwidth}
 \RequirePackage{fontspec}
 \RequirePackage{geometry}
@@ -31,26 +32,6 @@
 \setlength{\sidebarmargin}{5mm}
 \setlength{\parindent}{0em}
 \TPMargin{2mm}
-
-\renewcommand{\familydefault}{\sfdefault}
-\setsansfont{Roboto}[
-  UprightFont = *-Regular,
-  %-- Upright --%
-  FontFace={ul}{n}{Font=*-Thin},
-  FontFace={l}{n}{Font=*-Light},
-  FontFace={m}{n}{Font=*-Regular},
-  FontFace={mb}{n}{Font=*-Medium},
-  FontFace={b}{n}{Font=*-Bold},
-  FontFace={eb}{n}{Font=*-Black},
-  % %-- Italic --%
-  FontFace={ul}{it}{Font=*-ThinItalic},
-  FontFace={l}{it}{Font=*-LightItalic},
-  FontFace={m}{it}{Font=*-Italic},
-  FontFace={mb}{it}{Font=*-MediumItalic},
-  FontFace={b}{it}{Font=*-BoldItalic},
-  FontFace={eb}{it}{Font=*-BlackItalic},
-]
-
 
 %---------------------------------------
 % Font / style configuration
@@ -79,15 +60,16 @@
 	\@sectioncolor #1
 }
 
-\newcommand{\firstnamestyle}[1]{{\fontseries{l}\selectfont\color{lowcontrastwhite}#1}}
-\newcommand{\lastnamestyle}[1]{{\fontseries{mb}\selectfont\color{white}#1}}
+\newcommand{\firstnamestyle}[1]{\robotoLight{\color{lowcontrastwhite}#1}}
+\newcommand{\lastnamestyle}[1]{\robotoMedium{\color{white}#1}}
+\newcommand{\sidebartextstyle}[1]{\robotoRegular{\color{lowcontrastwhite}#1}}
 \newcommand{\datestyle}[1]{{\color{accent}#1}}
-\newcommand{\entrypositionstyle}[1]{\begingroup\fontseries{mb}\textcolor{text}{#1}\endgroup}
-\newcommand{\entrydatestyle}[1]{{\fontseries{m}\selectfont\color{accent}#1}}
+\newcommand{\entrypositionstyle}[1]{\robotoRegular{\textcolor{text}{#1}}}
+\newcommand{\entrydatestyle}[1]{\robotoRegular{\color{accent}#1}}
 \newcommand{\entrylocationstyle}[1]{\textbf{\textcolor{entrytitle}{#1}}}
-\newcommand{\entryplacestyle}[1]{\begingroup\fontseries{l}\textit{\textcolor{text}{#1}}\endgroup}
-\newcommand{\entrydescriptionstyle}[1]{\begingroup\fontseries{l}\selectfont\color{text}#1\endgroup}
-\newcommand{\skillstyle}[1]{{\color{lowcontrastwhite} #1}}
+\newcommand{\entryplacestyle}[1]{\robotoLight{\textit{\textcolor{text}{#1}}}}
+\newcommand{\entrydescriptionstyle}[1]{\begingroup\color{text}#1\endgroup}
+\newcommand{\skillstyle}[1]{\robotoRegular{\color{lowcontrastwhite} #1}}
 
 
 %---------------------------------------
@@ -133,10 +115,10 @@
 			\vspace{1em}
 			\begin{varwidth}{\textwidth}
 				\raggedright
-        \icontext{\faPhone*}{\thephone}\headersep{}
-        \iconlink{\faEnvelope}{\themail}{mailto:\themail}\headersep{}
-        \iconlink{\faGithub}{github.com/\thegithub}{https://github.com/\thegithub}\headersep{}
-        \iconlink{\faLinkedin}{linkedin.com/in/\thelinkedin}{https://www.linkedin.com/in/\thelinkedin}
+				\icontext{\faPhone*}{\sidebartextstyle{\thephone}}\headersep{}
+				\iconlink{\faEnvelope}{\sidebartextstyle{\themail}}{mailto:\themail}\headersep{}
+				\iconlink{\faGithub}{\sidebartextstyle{github.com/\thegithub}}{https://github.com/\thegithub}\headersep{}
+				\iconlink{\faLinkedin}{\sidebartextstyle{linkedin.com/in/\thelinkedin}}{https://www.linkedin.com/in/\thelinkedin}
 			\end{varwidth}
 
 			\input{skills}

@@ -1,17 +1,10 @@
 \section*{Extracurriculars}
 
 \begin{cventries}
-  \cvproject{Teaching Assistant, \textit{Various Courses}}
-  {September 2018 --- July 2020} % Date(s)
-  {%
-    \begin{cvitems}
-    \item Taught students in support lectures and exercise sessions.
-    \item Provided students with guidance and feedback on programming (\cvlanguage{Java}, \cvlanguage{C}, \cvlanguage{Haskell}) and theory\\ (Program Correctness, Theory of Computation) assignments.
-    \item Graded exams and assignments.
-    \end{cvitems}
-  }
-  \cvproject{Hackathon Committee Member, \textit{Student Association `Cover'}}
+  \cventry{Student Association \textit{Cover}}
+  {Hackathon Committee Member}
   {September 2018 --- March 2020}
+  {}
   {%
     \begin{cvitems}
       \item Helped organize LAN parties and Hackathons in partnership with a local company, each with 40+ attendants.
@@ -19,19 +12,34 @@
       \item Designed the committee logo.
     \end{cvitems}
   }
-  \cvproject{First place, \textit{Computer graphics competition}}
+  \cventry{Computer Graphics Competition}
+  {First place}
   {March 2020}
+  {}
   {%
     \begin{cvitems}
       \item Used \cvlanguage{C++} to implement a small 3D scene rendered with OpenGL using HDR rendering, shadow mapping, and vertex displacement.  \textbf{\githublink{isolation}{Project on GitHub.}}
-      \item Voted best/most interesting real-time rendered scene among 20+ entrants for the OpenGL competition organized by the Computer Graphics course at the University of Groningen.
+      \item Voted best/most interesting real-time rendered scene among 20+ entrants for the real-time 3D rendering competition organized by the Computer Graphics course at the University of Groningen.
     \end{cvitems}
   }
 \end{cventries}
 
-\section*{Personal Projects}
+\section*{Projects}
 \begin{cventries}
-  \cvproject{\textit{Oxide}}
+  \cventry{Bachelor's Project}
+  {\textit{Arbitrary local refinement of gradient meshes}}
+  {}
+  {}
+  {%
+    \begin{cvitems}
+    \item Research component: devised a new way to split individual cells in gradient meshes, a popular vector graphics primitive.
+    \item Development component: used \cvlanguage{C++} to build an interactive gradient mesh editor, allowing users to move and split cells using the above mentioned refinement scheme.
+    \item Soon to be published in an academic journal.
+    \end{cvitems}
+  }
+  \cventry{Personal Project}
+  {\textit{Oxide}}
+  {}
   {}
   {%
     \begin{cvitems}
@@ -39,15 +47,19 @@
     \item Created a custom instruction set and virtual machine for program instructions to be compiled to and run on.
     \end{cvitems}
   }
-  \cvproject{\textit{Prayer}}
+  %\cventry{Personal Project}
+  %{\textit{Prayer}}
+  %{}
+  %{}
+  %{%
+  %  \begin{cvitems}
+  %  \item Used \cvlanguage{Rust} to implement a physically-based path tracer to produce photorealistic images from a scene description.\textbf{\githublink{prayer}{Project on GitHub.}}
+  %    \item Optimized the implementation to take advantage of parallelism as well as acceleration data structures such as KD-Trees.
+  %  \end{cvitems}
+  %}
+  \cventry{Personal Project}
+  {\textit{Damage}}
   {}
-  {%
-    \begin{cvitems}
-    \item Used \cvlanguage{Rust} to implement a physically-based path tracer to produce photorealistic images from a scene description.\textbf{\githublink{prayer}{Project on GitHub.}}
-      \item Optimized the implementation to take advantage of parallelism as well as acceleration data structures such as KD-Trees.
-    \end{cvitems}
-  }
-  \cvproject{\textit{Damage}}
   {}
   {%
     \begin{cvitems}
@@ -56,7 +68,9 @@
     \item Reverse-engineered CPU and audio functionality from original developer documentation and other open-source emulators' source code.
     \end{cvitems}
   }
-  \cvproject{\textit{SSM --- Speedy SIMD Math}}
+  \cventry{Personal Project}
+  {\textit{SSM --- Speedy SIMD Math}}
+  {}
   {}
   {%
     \begin{cvitems}

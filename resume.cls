@@ -71,6 +71,7 @@
 \newcommand{\entryplacestyle}[1]{\robotoLight{\textit{\textcolor{text}{#1}}}}
 \newcommand{\entrydescriptionstyle}[1]{\begingroup\color{text}#1\endgroup}
 \newcommand{\skillstyle}[1]{\robotoRegular{\color{lowcontrastwhite} #1}}
+\newcommand{\subtitlestyle}[1]{\textit{\robotoMedium{\color{gray}#1}}}
 
 %---------------------------------------
 % Custom formatting commands
@@ -158,7 +159,7 @@
 }
 \newcommand{\cvproject}[3]{%
 	\item\begin{tabularx}{\textwidth}{@{}Xr@{}}
-		\entrylocationstyle{#1} & \entrydatestyle{#2}
+		\entrylocationstyle{#1} & \entrydatestyle{#2}\\
 	\end{tabularx}
 
 	\entrydescriptionstyle{#3}
@@ -195,7 +196,7 @@
 }
 
 \newenvironment{cvitems}{
-	\begin{itemize}[align=parleft, left=1em..2em, itemsep=0.2em, topsep=0pt, partopsep=0pt]
+	\begin{itemize}[align=parleft, left=1em..2em, itemsep=0.1em, topsep=0pt, partopsep=0pt]
 }{
 	\end{itemize}
 }

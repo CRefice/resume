@@ -16,7 +16,6 @@
 \RequirePackage[sfdefault, light]{roboto}
 \RequirePackage{varwidth}
 \RequirePackage{fontspec}
-\RequirePackage{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{titlesec}
 \RequirePackage{tabularx}
@@ -31,11 +30,12 @@
 \setlength{\sidebarwidth}{0.27\paperwidth}
 \setlength{\sidebarmargin}{5mm}
 \setlength{\parindent}{0em}
-\TPMargin{2mm}
+
 
 %---------------------------------------
 % Font / style configuration
 %----------------------------------------
+\definecolor{accent}{HTML}{dc3522}
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{lowcontrastwhite}{rgb}{0.8,0.8,0.8}
 \definecolor{lightgray}{HTML}{999999}
@@ -50,9 +50,9 @@
 \colorlet{text}{gray}
 \colorlet{entrytitle}{darkgray}
 \colorlet{section}{darkgray}
+\colorlet{lowcontrast}{lightgray}
 \colorlet{sidebar}{darkblue}
 \colorlet{sidebarsection}{white}
-\definecolor{accent}{HTML}{004bc4}
 \newcommand{\@sectioncolor}[3]{
 	\textcolor{accent}{#1#2#3}%
 }
@@ -60,9 +60,10 @@
 	\@sectioncolor #1
 }
 
-\newcommand{\firstnamestyle}[1]{\robotoLight{\color{lowcontrastwhite}#1}}
-\newcommand{\lastnamestyle}[1]{\robotoMedium{\color{white}#1}}
+\newcommand{\firstnamestyle}[1]{\robotoLight{\color{gray}#1}}
+\newcommand{\lastnamestyle}[1]{\robotoMedium{\color{darkgray}#1}}
 \newcommand{\sidebartextstyle}[1]{\robotoRegular{\color{lowcontrastwhite}#1}}
+\newcommand{\iconstyle}[1]{{\color{darkgray}#1}}
 \newcommand{\datestyle}[1]{{\color{accent}#1}}
 \newcommand{\entrypositionstyle}[1]{\robotoRegular{\textcolor{text}{#1}}}
 \newcommand{\entrydatestyle}[1]{\robotoRegular{\color{accent}#1}}
@@ -71,15 +72,14 @@
 \newcommand{\entrydescriptionstyle}[1]{\begingroup\color{text}#1\endgroup}
 \newcommand{\skillstyle}[1]{\robotoRegular{\color{lowcontrastwhite} #1}}
 
-
 %---------------------------------------
 % Custom formatting commands
 %----------------------------------------
 \newcommand{\icontext}[2] {
-	\iconstyle{#1}\hspace{2mm}#2
+	\iconstyle{#1}\hspace{1mm}#2
 }
 \newcommand{\iconlink}[3] {
-	\href{#3}{\iconstyle{#1}\hspace{2mm}#2}
+	\href{#3}{\iconstyle{#1}\hspace{1mm}#2}
 }
 \newcommand{\githublink}[2] {
 	\iconlink{\faGithubSquare}{#2}{https://github.com/\thegithub/#1}
@@ -87,8 +87,9 @@
 
 % No page number
 \pagestyle{empty}
-\geometry{margin=0pt, right=\sidebarmargin, left=\sidebarwidth+\sidebarmargin, nohead, nofoot}
 
+\titleformat{\section}
+{\normalfont\raggedright\bfseries\Large\color{section}}{\thesection}{1em}{\sectioncolor}[{\color{lowcontrast}\titlerule[0.8pt]}]
 
 \newcommand*{\name}[2]{\newcommand*{\firstname}{#1}\newcommand*{\lastname}{#2}}
 \newcommand*{\phone}[1]{\newcommand*{\thephone}{#1}}
@@ -96,7 +97,19 @@
 \newcommand*{\github}[1]{\newcommand*{\thegithub}{#1}}
 \newcommand*{\linkedin}[1]{\newcommand*{\thelinkedin}{#1}}
 
-\newcommand{\headersep}{\\[0.5em]}
+\newcommand{\headersep}{\ |\ }
+\newcommand{\makeheader}{%
+	\color{text}
+	\begin{center}
+		\resizebox{0.4\linewidth}{!}{\firstnamestyle{\firstname{}} \lastnamestyle{\lastname}}
+
+		\vspace{1em}
+		\icontext{\faPhone*}{\thephone}\headersep{}
+		\iconlink{\faEnvelope}{\themail}{mailto:\themail}\headersep{}
+		\iconlink{\faGithub}{\thegithub}{https://github.com/\thegithub}\headersep{}
+		\iconlink{\faLinkedin}{\thelinkedin}{https://www.linkedin.com/in/\thelinkedin}
+	\end{center}
+}
 \newcommand{\makesidebar}{%
   \newcommand{\iconstyle}[1]{{\color{white}##1}}
   \titleformat{\section}
@@ -151,7 +164,8 @@
 	\entrydescriptionstyle{#3}
 }
 
-\newcommand{\cvlanguage}[1]{\begingroup\fontseries{m}\selectfont{}#1\endgroup}
+\newcommand{\cvskill}[1]{\entrydescriptionstyle{#1}}
+\newcommand{\cvlanguage}[1]{\robotoRegular{#1}}
 \renewcommand\tabularxcolumn[1]{m{#1}}
 \newenvironment{skills}{%
 	\begin{tabular}{l}
@@ -175,14 +189,13 @@
 }
 
 \newenvironment{cventries}{
-	\begin{enumerate}[align=parleft, left=0em..0em, label={}, itemsep=0.4em]
+	\begin{enumerate}[align=parleft, left=0em..0em, label={}, itemsep=1em]
 }{
 	\end{enumerate}
 }
 
 \newenvironment{cvitems}{
-  \vspace{-0.3em}
-	\begin{itemize}[align=parleft, left=1em..2em, itemsep=0.1em, topsep=0pt, partopsep=0pt]
+	\begin{itemize}[align=parleft, left=1em..2em, itemsep=0.2em, topsep=0pt, partopsep=0pt]
 }{
 	\end{itemize}
 }

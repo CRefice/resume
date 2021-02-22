@@ -3,7 +3,7 @@
 
 \documentclass[a4paper, 10pt]{resume}
 
-\setlength{\sidebarwidth}{0.25\paperwidth}
+\usepackage[margin=1.75cm, nohead, nofoot]{geometry}
 
 \name{Carlo}{Refice}
 \phone{(+39) 389 461 6949}
@@ -12,12 +12,11 @@
 \mail{crefice@gmail.com}
 
 \begin{document}
-\sffamily
-\makesidebar{}
+\makeheader{}
 
-\vspace{-1em}
 \input{education}
+\input{skills}
 \input{experience}
-\input{projects}
+\input{extra}
 
 \end{document}

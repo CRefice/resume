@@ -97,6 +97,7 @@
 \newcommand*{\mail}[1]{\newcommand*{\themail}{#1}}
 \newcommand*{\github}[1]{\newcommand*{\thegithub}{#1}}
 \newcommand*{\linkedin}[1]{\newcommand*{\thelinkedin}{#1}}
+\newcommand*{\location}[1]{\newcommand*{\thelocation}{#1}}
 
 \newcommand{\headersep}{\ |\ }
 \newcommand{\makeheader}{%
@@ -105,6 +106,7 @@
 		\resizebox{0.4\linewidth}{!}{\firstnamestyle{\firstname{}} \lastnamestyle{\lastname}}
 
 		\vspace{1em}
+		\icontext{\faMapMarker}{\thelocation}\headersep{}
 		\icontext{\faPhone*}{\thephone}\headersep{}
 		\iconlink{\faEnvelope}{\themail}{mailto:\themail}\headersep{}
 		\iconlink{\faGithub}{\thegithub}{https://github.com/\thegithub}\headersep{}
@@ -130,6 +132,7 @@
 			\begin{varwidth}{\textwidth}
 				\raggedright
 				\icontext{\faPhone*}{\sidebartextstyle{\thephone}}\headersep{}
+				\icontext{\faMapMarker}{\sidebartextstyle{\thelocation}}\headersep{}
 				\iconlink{\faEnvelope}{\sidebartextstyle{\themail}}{mailto:\themail}\headersep{}
 				\iconlink{\faGithub}{\sidebartextstyle{github.com/\thegithub}}{https://github.com/\thegithub}\headersep{}
 				\iconlink{\faLinkedin}{\sidebartextstyle{linkedin.com/in/\thelinkedin}}{https://www.linkedin.com/in/\thelinkedin}

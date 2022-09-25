@@ -66,9 +66,9 @@
 \newcommand{\iconstyle}[1]{{\color{darkgray}#1}}
 \newcommand{\datestyle}[1]{{\color{accent}#1}}
 \newcommand{\entrypositionstyle}[1]{\robotoRegular{\textcolor{text}{#1}}}
-\newcommand{\entrydatestyle}[1]{\robotoRegular{\color{accent}#1}}
 \newcommand{\entrylocationstyle}[1]{\textbf{\textcolor{entrytitle}{#1}}}
-\newcommand{\entryplacestyle}[1]{\robotoLight{\textit{\textcolor{text}{#1}}}}
+\newcommand{\entrydatestyle}[1]{\robotoRegular{\small\color{accent}#1}}
+\newcommand{\entryplacestyle}[1]{\robotoRegular{\textit{\small\textcolor{text}{#1}}}}
 \newcommand{\entrydescriptionstyle}[1]{\begingroup\color{text}#1\endgroup}
 \newcommand{\skillstyle}[1]{\robotoRegular{\color{lowcontrastwhite} #1}}
 \newcommand{\subtitlestyle}[1]{\textit{\robotoMedium{\color{gray}#1}}}
@@ -155,7 +155,7 @@
 \newcommand{\cventry}[5]{%
 	\item\begin{tabularx}{\textwidth}{@{}Xr@{}}
 		\entrylocationstyle{#2} & \entrydatestyle{#3} \\
-		\entrypositionstyle{#1} & \null
+		\entrypositionstyle{#1} & \entryplacestyle{#4}
 	\end{tabularx}
 
 	\entrydescriptionstyle{#5}

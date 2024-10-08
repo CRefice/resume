@@ -91,6 +91,7 @@
 
 \titleformat{\section}
 {\normalfont\raggedright\bfseries\Large\color{section}}{\thesection}{1em}{\sectioncolor}[{\color{lowcontrast}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{2em}{1em}
 
 \newcommand*{\name}[2]{\newcommand*{\firstname}{#1}\newcommand*{\lastname}{#2}}
 \newcommand*{\phone}[1]{\newcommand*{\thephone}{#1}}
@@ -105,12 +106,13 @@
 	\begin{center}
 		\resizebox{0.4\linewidth}{!}{\firstnamestyle{\firstname{}} \lastnamestyle{\lastname}}
 
-		\vspace{1em}
+		\vspace{2em}
 		\icontext{\faMapMarker}{\thelocation}\headersep{}
 		\icontext{\faPhone*}{\thephone}\headersep{}
 		\iconlink{\faEnvelope}{\themail}{mailto:\themail}\headersep{}
 		\iconlink{\faGithub}{\thegithub}{https://github.com/\thegithub}\headersep{}
 		\iconlink{\faLinkedin}{\thelinkedin}{https://www.linkedin.com/in/\thelinkedin}
+		\vspace{1em}
 	\end{center}
 }
 \newcommand{\makesidebar}{%
@@ -199,7 +201,7 @@
 }
 
 \newenvironment{cvitems}{
-	\begin{itemize}[align=parleft, left=1em..2em, itemsep=0.1em, topsep=0pt, partopsep=0pt]
+	\begin{itemize}[align=parleft, left=1em..2em, itemsep=0.2em, topsep=0pt, partopsep=0pt]
 }{
 	\end{itemize}
 }

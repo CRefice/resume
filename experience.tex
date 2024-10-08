@@ -1,15 +1,27 @@
 \section*{Experience}
 
 \begin{cventries}
+	\cventry{Software Engineer}
+	{Oracle Labs}
+	{October 2023 --- Present} % Date(s)
+	{Z{\"u}rich, Switzerland}
+	{%
+		\begin{cvitems}
+			\item Responsible for improving testing and robustness of the \cvlanguage{Graal} Java Bytecode compiler, itself written in \cvlanguage{Java}.
+			\item Implemented a \cvlanguage{Java} code generation component of the compiler for correctness and performance testing purposes.
+			\item Diagnosed and fixed long-standing, hard to reproduce compiler bugs, including race conditions in multi-threaded code.
+		\end{cvitems}
+	}
 	\cventry{Site Reliability Engineering Intern}
 	{Google}
 	{July 2022 --- September 2022} % Date(s)
 	{Z{\"u}rich, Switzerland}
 	{%
 		\begin{cvitems}
-			\item Designed and implemented a service to automatically identify, report and clean up deprecated \cvlanguage{Protocol Buffer} fields in Google's internal databases, written in \cvlanguage{C++}.
-			\item Profiled and optimized the service to be able to handle cloud-scale data sizes.
-			\item Tested the service on a database used to store user-generated content, discovering terabytes of potential savings.
+		\item Designed and implemented a service to automatically identify, report and clean up deprecated \cvlanguage{Protocol Buffer} fields in \cvlanguage{Spanner} databases, written in \cvlanguage{C++}.
+			\item Used \cvlanguage{Stubby} to parse protocol buffer definition files from \cvlanguage{SrcFS} version control.
+			\item Implemented the service using \cvlanguage{Flume} pipelines to handle cloud-scale data sizes.
+			\item Tested the service on a database containing user-generated content, discovering Terabytes of potential savings.
 		\end{cvitems}
 	}
 	\cventry{Research Intern}
@@ -18,23 +30,23 @@
 	{Z{\"u}rich, Switzerland}
 	{%
 		\begin{cvitems}
-		\item Researched an experimental compilation mode for the \cvlanguage{GraalVM} Java Bytecode compiler, itself written in \cvlanguage{Java}, focusing on fast compilation times.
+		\item Devised an experimental compilation mode for the \cvlanguage{Graal} compiler, focusing on fast compilation times.
 		\item Implemented the ``Quick build'' mode of the \cvlanguage{Native Image} ahead-of-time JVM compiler.
 		\item Integrated the new feature with the existing \cvlanguage{CI} infrastructure, configured using \cvlanguage{Python}.
 		\end{cvitems}
 	}
-	\cventry{Teaching Assistant, \emph{Object-Oriented Programming}}
-	{École Polytechnique Fédérale de Lausanne}
-	{February 2021 --- July 2021} % Date(s)
-	{Lausanne, Switzerland}
-	{%
-		\begin{cvitems}
-		\item Mentored groups of students, giving advice on their semester-long project written in \cvlanguage{C++}.
-		\item Helped rewrite and modernize the course's tutorial on GUI development with \cvlanguage{Qt} and \cvlanguage{OpenGL}.
-		\item Graded exams and assignments.
-		\end{cvitems}
-	}
-\cventry{Teaching Assistant, \emph{Various courses}}
+	%\cventry{Teaching Assistant, \emph{Object-Oriented Programming}}
+	%{École Polytechnique Fédérale de Lausanne}
+	%{February 2021 --- July 2021} % Date(s)
+	%{Lausanne, Switzerland}
+	%{%
+	%	\begin{cvitems}
+	%	\item Mentored groups of students, giving advice on their semester-long project written in \cvlanguage{C++}.
+	%	\item Helped rewrite and modernize the course's tutorial on GUI development with \cvlanguage{Qt} and \cvlanguage{OpenGL}.
+	%	\item Graded exams and assignments.
+	%	\end{cvitems}
+	%}
+\cventry{Teaching Assistant}
 	{University of Groningen}
 	{September 2018 --- July 2020} % Date(s)
 	{Groningen, The Netherlands}
